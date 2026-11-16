@@ -100,12 +100,12 @@ void AC_Automaton :: unionResult(Node* out, Node* in) {
     }
 }
 
-void AC_Automaton :: findOuts(const vector<bool> &outs, int ind, vector<vector<int>> &Res) {
-    ind++;
+void AC_Automaton :: findOuts(const vector<bool> &outs, size_t ind, vector<vector<int>> &Res) {
+    size_t endInd = ind + 1;
     for(int i=0; i<kwSize; i++){
         if(outs[i]){
-            int startInd = ind - (int)Dictionary[i].size();
-            if(startInd >= 0){
+            if(Dictionary[i].size() <= endInd){
+                size_t startInd = endInd - Dictionary[i].size();
                 Res[startInd].push_back(i);
             }
         }
@@ -157,11 +157,11 @@ AC_Automaton :: ~AC_Automaton() {
 }
 
 vector<vector<int>> AC_Automaton :: matchPattern(const vector<int> &in) {
-    int N = in.size();
+    size_t N = in.size();
     vector<vector<int>> Res(N, vector<int> ());
 
     Node* state = TrieRoot;
-    for(int i=0; i<N; i++){
+    for(size_t i=0; i<N; i++){
         int a = in[i];
         if (a<0 || a>=alphaSize) {
             throw std::out_of_range("Invalid input symbol");

@@ -2,6 +2,7 @@
 #define AC_AUTOMATON_H
 
 #include <vector>
+#include <cstddef>
 
 struct Node;
 
@@ -20,7 +21,7 @@ private:
     void unionResult(Node* out, Node* in);
     void findOuts(
         const std::vector<bool>& outs,
-        int ind,
+        std::size_t ind,
         std::vector<std::vector<int>>& Res
     );
 
