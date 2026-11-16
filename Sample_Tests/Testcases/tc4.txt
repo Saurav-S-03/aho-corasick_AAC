@@ -1,0 +1,16 @@
+[IMP] Purpose: Verify that patterns inherited through failure links are detected.
+---------------------------------------------------------------------------
+
+vector<vector<int>> dict = {
+    {0, 1, 2},
+    {1, 2},
+    {2}
+};
+
+vector<int> input = {0, 1, 2};
+
+---------------------------------------------------------------------------
+
+Index 0: 0
+Index 1: 1
+Index 2: 2

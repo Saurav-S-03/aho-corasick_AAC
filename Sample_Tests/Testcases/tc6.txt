@@ -1,0 +1,15 @@
+Purpose: Verify that duplicate patterns with different IDs are reported separately.
+------------------------------------------------------------------------------------
+
+vector<vector<int>> dict = {
+    {0, 1},
+    {0, 1},
+    {1}
+};
+
+vector<int> input = {0, 1};
+
+--------------------------------------
+
+Index 0: 0, 1
+Index 1: 2
