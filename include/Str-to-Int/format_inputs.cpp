@@ -2,6 +2,8 @@
 // #include <vector>
 // #include <string>
 
+#include <utility>
+
 using namespace std;
 
 charInputFormatter :: charInputFormatter(const std::vector<std::string> &inputs) {
@@ -21,16 +23,16 @@ bool charInputFormatter :: insertIntoDict(const std::string &str, std::size_t in
     for(std::size_t i=0; i<str.size(); i++){
         entry[i] = (int)str[i];
     }
-    this -> dictionary[ind] = entry;
+    this -> dictionary[ind] = std::move(entry);
 
     return true;
 }
 
-std::vector<std::vector<int>> charInputFormatter :: getDictionary(void) {
+const std::vector<std::vector<int>> charInputFormatter :: getDictionary(void) const {
     return this->dictionary;
 }
 
-bool charInputFormatter :: findKeyword(std::size_t keyID, std::string &str) {
+bool charInputFormatter :: findKeyword(std::size_t keyID, std::string &str) const {
     if(keyID<0 || keyID>=N){ return false; }
     str = this->in[keyID];
     return true;

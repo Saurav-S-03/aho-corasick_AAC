@@ -182,3 +182,7 @@ vector<vector<int>> AC_Automaton :: matchPattern(const vector<int> &in) {
 
     return Res;
 }
+
+long long AC_Automaton :: findNodeCount(void) const {
+    return ID;
+}

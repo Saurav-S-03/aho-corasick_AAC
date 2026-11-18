@@ -44,6 +44,8 @@ public:
     std::vector<std::vector<int>> matchPattern(
         const std::vector<int>& in
     );
+
+    long long findNodeCount(void) const;
 };
 
 #endif
