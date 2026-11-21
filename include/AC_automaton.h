@@ -46,6 +46,9 @@ public:
     );
 
     long long findNodeCount(void) const;
+
+    void constructGotoPaths(void);
+    void constructFailurePaths(void);
 };
 
 #endif

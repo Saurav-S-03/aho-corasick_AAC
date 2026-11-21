@@ -32,11 +32,23 @@ const std::vector<std::vector<int>> charInputFormatter :: getDictionary(void) co
     return this->dictionary;
 }
 
-std::vector<int> charInputFormatter ::  formatInput(const std::string &str) {
+std::vector<int> charInputFormatter :: formatInput(const std::string &str) {
     vector<int> res(str.length());
 
     for(size_t i=0; i<str.length(); i++){
         res[i] = (int)str[i];
+    }
+    return res;
+}
+
+std::vector<int> charInputFormatter :: formatInput2(const std::string &str) {
+    vector<int> res(str.length());
+
+    for(size_t i=0; i<str.length(); i++){
+        if(str[i]>='A' && str[i]<='Z'){
+            res[i] = (int)('a' + str[i] - 'A');
+        }
+        else{ res[i] = (int)str[i]; }
     }
     return res;
 }

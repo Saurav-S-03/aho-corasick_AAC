@@ -11,6 +11,9 @@ Input file used rn `/Datasets/Testing/full-domains-input.txt`
 `g++ Datasets/Testing/domain_names_test.cpp src/AC_automaton.cpp src/charInputFormatter.cpp -I include -o domains_test`  
 [To run cmd at Home Directory]
 
+`g++ -O2 Datasets/Testing_2/passwordsTest.cpp src/AC_auto_benchmark.cpp src/charInputFormatter.cpp -I include -lpapi -o test2`
+[To run cmd at Home Directory with PAPI]
+
 ---
 
 ### Run

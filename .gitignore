@@ -12,6 +12,7 @@
 # IDE files
 .vscode/
 .idea/
+.ipynb_checkpoints/
 
 # OS files
 .DS_Store

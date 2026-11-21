@@ -16,6 +16,7 @@ public:
     charInputFormatter(const std::vector<std::string> &inputs);
     const std::vector<std::vector<int>> getDictionary(void) const;
     std::vector<int> formatInput(const std::string &str);
+    std::vector<int> formatInput2(const std::string &str);
     bool findKeyword(std::size_t keyID, std::string &str);
     std::string findKeyWord(std::size_t keyID);
 };

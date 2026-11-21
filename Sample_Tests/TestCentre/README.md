@@ -13,3 +13,6 @@ All input txt files are in `../Testcases/Inputs/<file_name>.txt`
 ### Run
 `./<object_name>` {For manual input}  
 `./<object_name> < ../Testcases/Inputs/<file_name>.txt` {Direct read from file}
+
+### cmd
+`g++ Sample_Tests/TestCentre/test1.cpp src/AC_automaton.cpp src/format_inputs.cpp -Iinclude -o test`

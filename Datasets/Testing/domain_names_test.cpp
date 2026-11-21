@@ -54,7 +54,7 @@ int main()
     std::chrono::milliseconds milliDiff = std::chrono::duration_cast<std::chrono::milliseconds>(encodeEnd - encodeStart);
     cout << "Encode: " << milliDiff.count() << " ms  |  " << microDiff.count() << " us" << endl;
 
-    microDiff = duration_cast<microseconds>(ACEnd - ACEnd);
+    microDiff = duration_cast<microseconds>(ACEnd - ACStart);
     milliDiff = duration_cast<milliseconds>(ACEnd - ACStart);
     cout << "Automaton Construction: " << milliDiff.count() << " ms  |  " << microDiff.count() << " us" << endl;
     cout << "Node Count: " << AC -> findNodeCount() << endl;
@@ -63,12 +63,13 @@ int main()
     while(1)
     {
         cout << "Enter [0:Exit | 1:Input]: ";
-        cin >> op;
+        if (!(cin >> op)) { break; }
         if(op<0 || op>1){ continue; }
         if(op == 0){ break; }
 
         string full_line_input;
-        std::getline(std::cin.ignore(), full_line_input); // Reads spaces, tabs, punctuation, etc.
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::getline(std::cin, full_line_input); // Reads spaces, tabs, punctuation, etc.
 
         vector<int> acIn = encoder.formatInput(full_line_input);
         vector<vector<int>> actual;
@@ -84,7 +85,7 @@ int main()
             return 1;
         }
         
-        microDiff = duration_cast<microseconds>(ACEnd - ACEnd);
+        microDiff = duration_cast<microseconds>(ACEnd - ACStart);
         milliDiff = duration_cast<milliseconds>(ACEnd - ACStart);
         cout << "Pattern Len: " << acIn.size();
         cout << "Pattern Time: " << milliDiff.count() << " ms  |  " << microDiff.count() << " us" << endl;
